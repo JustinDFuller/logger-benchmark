@@ -4,7 +4,11 @@
   "description": "Benchmarks for node.js loggers",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "setup": "mkdir ./logs && touch ./logs/rotating-log-file",
+    "pretest": "npm run setup",
+    "test": "node index.js",
+    "posttest": "npm run teardown",
+    "teardown": "rm -rf ./logs"
   },
   "repository": {
     "type": "git",
@@ -27,5 +31,10 @@
   "bugs": {
     "url": "https://github.com/JustinDFuller/logger-benchmark/issues"
   },
-  "homepage": "https://github.com/JustinDFuller/logger-benchmark#readme"
+  "homepage": "https://github.com/JustinDFuller/logger-benchmark#readme",
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "bunyan": "^1.8.12",
+    "bunyan-rotating-file-stream": "^1.6.3"
+  }
 }
