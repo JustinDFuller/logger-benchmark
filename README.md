@@ -13,7 +13,7 @@ stdout x 28,002 ops/sec ±6.65% (78 runs sampled)
 bunyan rotating file x 167,307 ops/sec ±3.84% (86 runs sampled)
 ```
 
-__Note:__ bunyan rotating file drops ~67.3k logs out of 167.3k total logs. It does not finish writing all logs until after the tests are finished running.
+__Note:__ bunyan rotating file drops ~67.3k logs out of 167.3k total logs. It does not finish writing all logs until after the tests are finished running. For this reason I consider it to be totally unreliable.
 
 ## Other notes
 
