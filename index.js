@@ -1,13 +1,19 @@
+process.env.DEBUG = 'test'
+
 const RotatingFileStream = require('bunyan-rotating-file-stream')
 const { exec } = require('child_process')
 const Benchmark = require('benchmark')
 const bunyan = require('bunyan')
+const logda = require('logda')
+const debug = require('debug')
 const path = require('path')
 const os = require('os')
 
 const hostname = os.hostname()
 const pid = process.pid
 const name = 'test'
+
+const debugLogger = debug(name)
 
 const bunyanLogger = bunyan.createLogger({ name })
 const bunyanRotatingFileLogger = bunyan.createLogger({ 
@@ -18,7 +24,7 @@ const bunyanRotatingFileLogger = bunyan.createLogger({
       period: '1d',
       totalFiles: 10,
       rotateExisting: true,  
-      threshold: '10m',     
+      threshold: '50m',     
       totalSize: '50m',    
       gzip: true
     })
@@ -45,6 +51,16 @@ suite.add('bunyan stdout', function () {
 suite.add('bunyan rotating file', function () {
   bunyanRotatingFileLogger.info('test')
   bunyanRotatingFileLogger.error('test')
+})
+
+suite.add('logda', function () {
+  logda.info('test')
+  logda.error('test')
+})
+
+suite.add('debug', function () {
+  debugLogger('%o', { name, hostname, pid, type: 'log', time: new Date(), msg: 'test' })
+  debugLogger('%o', { name, hostname, pid, type: 'error', time: new Date(), msg: 'test' })
 })
 
 suite.on('complete', function print () {

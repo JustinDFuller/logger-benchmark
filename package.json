@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "setup": "mkdir ./logs && touch ./logs/rotating-log-file",
-    "pretest": "npm run setup",
+    "pretest": "npm run teardown && npm run setup",
     "test": "node index.js",
     "posttest": "npm run teardown",
     "teardown": "rm -rf ./logs"
@@ -35,6 +35,8 @@
   "dependencies": {
     "benchmark": "^2.1.4",
     "bunyan": "^1.8.12",
-    "bunyan-rotating-file-stream": "^1.6.3"
+    "bunyan-rotating-file-stream": "^1.6.3",
+    "debug": "^4.1.0",
+    "logda": "git+https://github.com/JasonPollman/logda.git"
   }
 }
