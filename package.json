@@ -1,0 +1,31 @@
+{
+  "name": "logger-benchmark",
+  "version": "0.0.0",
+  "description": "Benchmarks for node.js loggers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinDFuller/logger-benchmark.git"
+  },
+  "keywords": [
+    "benchmark",
+    "log",
+    "logger",
+    "logging",
+    "performance",
+    "stdout",
+    "stderr",
+    "console",
+    "bunyan",
+    "winston"
+  ],
+  "author": "Justin Fuller <justindanielfuller@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustinDFuller/logger-benchmark/issues"
+  },
+  "homepage": "https://github.com/JustinDFuller/logger-benchmark#readme"
+}
