@@ -1,5 +1,7 @@
 # Logger Benchmarks
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JustinDFuller/logger-benchmark.svg)](https://greenkeeper.io/)
+
 Problem: What logger is most performant and reliable? Should I use a logger or just write to stdout?
 
 ## Metrics
