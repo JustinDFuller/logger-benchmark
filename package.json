@@ -37,6 +37,6 @@
     "bunyan": "^1.8.12",
     "bunyan-rotating-file-stream": "^1.6.3",
     "debug": "^4.1.0",
-    "logda": "git+https://github.com/JasonPollman/logda.git"
+    "logda": "^1.0.0"
   }
 }
