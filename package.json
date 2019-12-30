@@ -7,6 +7,7 @@
     "setup": "mkdir ./logs && touch ./logs/rotating-log-file",
     "pretest": "npm run teardown && npm run setup",
     "test": "node index.js",
+    "posttest": "npm run teardown",
     "teardown": "rm -rf ./logs"
   },
   "repository": {
